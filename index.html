@@ -112,37 +112,24 @@
             </div>
         </section>
 
-        <!-- ABA REMÉDIOS -->
+        
+                <!-- ABA REMÉDIOS -->
         <section id="aba-remedios" class="conteudo-aba tela-oculta">
             <h3 class="titulo-aba">💊 Meus Remédios</h3>
             
-            <div class="cartao-remedio remedio-azul">
-                <div class="icone-remedio">💙</div>
-                <div class="info-remedio">
-                    <h4>TDAH</h4>
-                    <p class="detalhe-remedio">☀️ Manhã — depois de comer</p>
-                    <label class="caixa-marcar">
-                        <input type="checkbox" id="tomou-tdah">
-                        <span id="etiqueta-tdah">Ainda não tomei</span>
-                    </label>
-                    <p class="ultima-vez" id="ultima-tdah"></p>
-                </div>
+            <!-- Formulário para adicionar -->
+            <div style="background:#F9F4FB; padding:15px; border-radius:14px; margin-bottom:15px;">
+                <h4 style="margin-bottom:10px; color:#7A6770;">➕ Adicionar remédio</h4>
+                <input type="text" id="nome-remedio-novo" placeholder="Nome do remédio" style="width:100%; padding:10px; margin-bottom:8px; border:2px solid #F0D8E8; border-radius:10px; background:#FFFCF9; font-size:1rem;">
+                <input type="text" id="horario-remedio-novo" placeholder="Ex: Manhã / Depois de almoço" style="width:100%; padding:10px; margin-bottom:10px; border:2px solid #F0D8E8; border-radius:10px; background:#FFFCF9; font-size:1rem;">
+                <button id="botao-adicionar-remedio" class="botao-fofo-pequeno">💾 Salvar remédio</button>
             </div>
 
-            <div class="cartao-remedio remedio-branco">
-                <div class="icone-remedio">🤍</div>
-                <div class="info-remedio">
-                    <h4>Ansiedade</h4>
-                    <p class="detalhe-remedio">🌙 Noite — antes de dormir</p>
-                    <label class="caixa-marcar">
-                        <input type="checkbox" id="tomou-ansiedade">
-                        <span id="etiqueta-ansiedade">Ainda não tomei</span>
-                    </label>
-                    <p class="ultima-vez" id="ultima-ansiedade"></p>
-                </div>
+            <!-- Lista dos remédios cadastrados -->
+            <div id="lista-remedios">
+                <p style="text-align:center; color:#999; padding:15px;">Nenhum remédio cadastrado ainda 💛<br>Adicione acima!</p>
             </div>
         </section>
-
         <!-- ABA CALENDÁRIO -->
         <section id="aba-calendario" class="conteudo-aba tela-oculta">
             <h3 class="titulo-aba">📅 Calendário</h3>
