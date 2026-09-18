@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#FFD6E0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Rotina Aconchegante 💛</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <header>
+        <div id="pudim-normal" class="pudim">
+            <span class="desenho-pudim">🐱</span>
+        </div>
+        <h1>🌿 Minha Rotina</h1>
+        <p class="subtitulo">Progresso, não perfeição 💛</p>
+    </header>
+
+    <nav class="navegacao">
+        <button class="aba ativa" data-aba="rotina">📋</button>
+        <button class="aba" data-aba="remedios">💊</button>
+        <button class="aba" data-aba="calendario">📅</button>
+        <button class="aba" data-aba="configuracoes">⚙️</button>
+    </nav>
+
+    <div class="botoes-descanso">
+        <button id="botao-descansar" class="botao-descansar">
+            💤 Descanso Total
+        </button>
+        <button id="botao-dor-cabeca" class="botao-dor-cabeca">
+            🤕 Dor de Cabeça
+        </button>
+    </div>
+
+    <!-- Tela Descanso Total -->
+    <div id="tela-descansar" class="tela-oculta">
+        <div class="caixa-descansar">
+            <div class="pudim-dormindo">
+                <span class="desenho-pudim-dormindo">☁️🐱💤</span>
+            </div>
+            <h2>🌙 Descanso Total</h2>
+            <p>Se hoje o corpo pede silêncio, isso é mais que suficiente 💛</p>
+            <p>Descansar não é desistir — é recarregar ✨</p>
+            <button id="botao-acordar" class="botao-fofo">✨ Estou de volta!</button>
+        </div>
+    </div>
+
+    <!-- Tela Dor de Cabeça -->
+    <div id="tela-dor-cabeca" class="tela-oculta">
+        <div class="caixa-dor-cabeca">
+            <h2>🤕 Dor de Cabeça</h2>
+            
+            <div class="form-dor">
+                <label>Intensidade:</label>
+                <div class="opcoes-intensidade">
+                    <label class="opcao-intensidade">
+                        <input type="radio" name="intensidade" value="leve">
+                        <span class="etiqueta leve">🟢 Leve</span>
+                    </label>
+                    <label class="opcao-intensidade">
+                        <input type="radio" name="intensidade" value="moderada">
+                        <span class="etiqueta moderada">🟡 Moderada</span>
+                    </label>
+                    <label class="opcao-intensidade">
+                        <input type="radio" name="intensidade" value="forte">
+                        <span class="etiqueta forte">🔴 Forte</span>
+                    </label>
+                </div>
+
+                <label>Observação:</label>
+                <textarea id="observacao-dor" rows="2" placeholder="Detalhes..."></textarea>
+
+                <div class="botoes-form">
+                    <button id="salvar-dor" class="botao-fofo">💾 Salvar</button>
+                    <button id="cancelar-dor" class="botao-fofo-pequeno">❌</button>
+                </div>
+            </div>
+
+            <div id="historico-dor">
+                <h4>📋 Registros</h4>
+                <ul id="lista-historico-dor"></ul>
+            </div>
+        </div>
+    </div>
+
+    <main id="conteudo-principal">
+        <!-- ABA ROTINA -->
+        <section id="aba-rotina" class="conteudo-aba">
+            <div class="botoes-periodos">
+                <button class="botao-periodo" data-periodo="manha">☀️ Manhã</button>
+                <button class="botao-periodo" data-periodo="tarde">🌤️ Tarde</button>
+                <button class="botao-periodo" data-periodo="noite">🌙 Noite</button>
+            </div>
+
+            <div id="lista-tarefas">
+                <h3 id="titulo-periodo">Escolha um horário 💛</h3>
+
+                <div class="adicionar-caixa">
+                    <input type="text" id="nova-tarefa" placeholder="Nova tarefa..." maxlength="40">
+                    <button id="botao-adicionar" class="botao-fofo-pequeno">+</button>
+                </div>
+
+                <ul id="tarefas"></ul>
+            </div>
+
+            <div id="mensagem-carinho" class="mensagem-oculta">
+                <span class="emoji-grande" id="emoji-sorteado">🌟</span>
+                <p id="texto-mensagem">Você fez isso! 💛</p>
+            </div>
+        </section>
+
+        <!-- ABA REMÉDIOS -->
+        <section id="aba-remedios" class="conteudo-aba tela-oculta">
+            <h3 class="titulo-aba">💊 Meus Remédios</h3>
+            
+            <div class="cartao-remedio remedio-azul">
+                <div class="icone-remedio">💙</div>
+                <div class="info-remedio">
+                    <h4>TDAH</h4>
+                    <p class="detalhe-remedio">☀️ Manhã — depois de comer</p>
+                    <label class="caixa-marcar">
+                        <input type="checkbox" id="tomou-tdah">
+                        <span id="etiqueta-tdah">Ainda não tomei</span>
+                    </label>
+                    <p class="ultima-vez" id="ultima-tdah"></p>
+                </div>
+            </div>
+
+            <div class="cartao-remedio remedio-branco">
+                <div class="icone-remedio">🤍</div>
+                <div class="info-remedio">
+                    <h4>Ansiedade</h4>
+                    <p class="detalhe-remedio">🌙 Noite — antes de dormir</p>
+                    <label class="caixa-marcar">
+                        <input type="checkbox" id="tomou-ansiedade">
+                        <span id="etiqueta-ansiedade">Ainda não tomei</span>
+                    </label>
+                    <p class="ultima-vez" id="ultima-ansiedade"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABA CALENDÁRIO -->
+        <section id="aba-calendario" class="conteudo-aba tela-oculta">
+            <h3 class="titulo-aba">📅 Calendário</h3>
+            <div class="navegacao-mes">
+                <button id="mes-anterior" class="botao-fofo-pequeno">◀</button>
+                <h4 id="nome-mes-ano"></h4>
+                <button id="proximo-mes" class="botao-fofo-pequeno">▶</button>
+            </div>
+
+            <div class="dias-semana">
+                <span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span>
+            </div>
+
+            <div id="grade-calendario" class="grade-calendario"></div>
+
+            <div id="caixa-evento" class="tela-oculta">
+                <h4 id="data-selecionada"></h4>
+                <input type="text" id="nome-evento" placeholder="Nome do evento">
+                <input type="time" id="hora-evento">
+                <label class="opcao-lembrete">
+                    <input type="checkbox" id="quer-lembrete"> Lembrete ⏰
+                </label>
+                <div class="botoes-evento">
+                    <button id="salvar-evento" class="botao-fofo-pequeno">💾</button>
+                    <button id="cancelar-evento" class="botao-fofo-pequeno">❌</button>
+                </div>
+                <ul id="lista-eventos-dia"></ul>
+            </div>
+        </section>
+
+        <!-- ABA CONFIGURAÇÕES -->
+        <section id="aba-configuracoes" class="conteudo-aba tela-oculta">
+            <h3 class="titulo-aba">⏰ Lembretes</h3>
+            
+            <label class="opcao-linha">
+                <input type="checkbox" id="ativar-lembretes"> Ativar notificações
+            </label>
+            
+            <div id="config-tempos" class="tela-oculta">
+                <p>Antecedência:</p>
+                <select id="tempo-lembrete">
+                    <option value="0">Na hora</option>
+                    <option value="5">5 min antes</option>
+                    <option value="15">15 min antes</option>
+                    <option value="60">1 hora antes</option>
+                </select>
+            </div>
+
+            <h4>Horários da rotina</h4>
+            <div class="grupo-horario">
+                <label>☀️ Manhã</label>
+                <input type="time" id="hora-manha">
+            </div>
+            <div class="grupo-horario">
+                <label>🌤️ Tarde</label>
+                <input type="time" id="hora-tarde">
+            </div>
+            <div class="grupo-horario">
+                <label>🌙 Noite</label>
+                <input type="time" id="hora-noite">
+            </div>
+        </section>
+    </main>
+
+    <!-- Aviso de sobreposição -->
+    <div id="sobreposicao" class="sobreposicao tela-oculta"></div>
+    <div id="aviso-sobrecarga" class="caixa-aviso tela-oculta">
+        <h3>💛 Atenção</h3>
+        <p>Esse dia já tem <strong id="quantos-eventos"></strong> evento(s).</p>
+        <p>Adicionar mais um?</p>
+        <div class="botoes-aviso">
+            <button id="pensar-melhor" class="botao-fofo-pequeno">Pensar</button>
+            <button id="confirmar-adicionar" class="botao-fofo">Sim ✅</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
