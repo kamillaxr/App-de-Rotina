@@ -35,8 +35,7 @@ Tudo fica salvo **direitinho no seu celular** — não precisa de internet depoi
 ## 📲 Como Usar
 
 ### Pelo navegador
-Acesse: `seu-usuario.github.io/minha-rotina`
-
+Acesse: `https://kamillaxr.github.io/App-de-Rotina/`
 ### Instalar no celular (igual app!)
 1. Abra o link acima no **Chrome**
 2. Toque nos **3 pontinhos** ⋮ → **Adicionar à tela inicial**
